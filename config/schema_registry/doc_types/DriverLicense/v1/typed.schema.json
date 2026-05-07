@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "DriverLicense/typed/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "document_id": { "type": "string" },
+    "doc_type": { "const": "DriverLicense" },
+    "schema_version": { "type": "string", "default": "v1" },
+
+    "summary": { "type": ["string", "null"], "default": null },
+
+    "issuing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country": { "type": ["string", "null"], "default": "US" },
+        "state_or_province": { "type": ["string", "null"], "default": null }
+      },
+      "required": ["country", "state_or_province"]
+    },
+
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "license_number": { "type": ["string", "null"], "default": null },
+        "card_number": { "type": ["string", "null"], "default": null },
+        "issue_date": { "type": ["string", "null"], "format": "date", "default": null },
+        "expiration_date": { "type": ["string", "null"], "format": "date", "default": null },
+        "class": { "type": ["string", "null"], "default": null },
+        "endorsements": { "type": ["string", "null"], "default": null },
+        "restrictions": { "type": ["string", "null"], "default": null }
+      },
+      "required": ["license_number", "card_number", "issue_date", "expiration_date", "class", "endorsements", "restrictions"]
+    },
+
+    "person": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "full_name": { "type": ["string", "null"], "default": null },
+        "first_name": { "type": ["string", "null"], "default": null },
+        "middle_name": { "type": ["string", "null"], "default": null },
+        "last_name": { "type": ["string", "null"], "default": null },
+
+        "date_of_birth": { "type": ["string", "null"], "format": "date", "default": null },
+        "sex": { "type": ["string", "null"], "default": null },
+
+        "height": { "type": ["string", "null"], "default": null },
+        "weight": { "type": ["string", "null"], "default": null },
+        "eye_color": { "type": ["string", "null"], "default": null },
+        "hair_color": { "type": ["string", "null"], "default": null }
+      },
+      "required": [
+        "full_name",
+        "first_name",
+        "middle_name",
+        "last_name",
+        "date_of_birth",
+        "sex",
+        "height",
+        "weight",
+        "eye_color",
+        "hair_color"
+      ]
+    },
+
+    "address": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "address_line1": { "type": ["string", "null"], "default": null },
+        "address_line2": { "type": ["string", "null"], "default": null },
+        "city": { "type": ["string", "null"], "default": null },
+        "state": { "type": ["string", "null"], "default": null },
+        "postal_code": { "type": ["string", "null"], "default": null }
+      },
+      "required": ["address_line1", "address_line2", "city", "state", "postal_code"]
+    }
+  },
+  "required": ["document_id", "doc_type", "schema_version"]
+}

@@ -1,0 +1,66 @@
+# Python virtual environment
+env/
+
+# CDK build outputs and temp files
+cdk/cdk.out/
+cdk/lib/*.js
+cdk/lib/*.d.ts
+cdk/bin/*.js
+cdk/bin/*.d.ts
+cdk/*.json
+!cdk/cdk.json
+!cdk/cdk.context.json
+!cdk/tsconfig.json
+!cdk/jest.config.js
+!cdk/package.json
+!cdk/package-lock.json
+
+# Stale/orphaned CDK files
+cdk/lib/cdk-stack.updated.ts
+cdk/lib/cdk-stack.updated.js
+cdk/lib/cdk-stack_1.js
+
+# Lambda layer installed packages (rebuilt during deploy)
+layers/opensearch/python/
+
+# validate_schema Lambda pip-installed packages (rebuilt during deploy)
+lambdas/validate_schema/attr/
+lambdas/validate_schema/attrs/
+lambdas/validate_schema/attrs-*.dist-info/
+lambdas/validate_schema/bin/
+lambdas/validate_schema/jsonschema/
+lambdas/validate_schema/jsonschema-*.dist-info/
+lambdas/validate_schema/jsonschema_specifications/
+lambdas/validate_schema/jsonschema_specifications-*.dist-info/
+lambdas/validate_schema/referencing/
+lambdas/validate_schema/referencing-*.dist-info/
+lambdas/validate_schema/rpds/
+lambdas/validate_schema/rpds_py-*.dist-info/
+lambdas/validate_schema/typing_extensions.py
+lambdas/validate_schema/typing_extensions-*.dist-info/
+
+# UI
+ui/.env.local
+ui/dist/
+ui/node_modules/
+
+# CDK node_modules
+cdk/node_modules/
+
+# CDK test compiled output
+cdk/test/*.js
+cdk/test/*.d.ts
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json
+
+# Lambda node_modules
+lambdas/api_router/node_modules/
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo

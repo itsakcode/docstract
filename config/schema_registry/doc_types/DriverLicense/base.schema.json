@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "DriverLicense/base",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "document_id": { "type": "string" },
+    "doc_type": { "type": "string" },
+    "ingested_at": { "type": "string", "format": "date-time" },
+    "pages": { "type": "integer", "minimum": 1 }
+  },
+  "required": ["document_id", "doc_type"]
+}

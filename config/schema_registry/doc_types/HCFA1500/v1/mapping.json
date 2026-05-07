@@ -1,0 +1,83 @@
+{
+  "doc_type": "HCFA1500",
+  "version": "v1",
+  "fields": {
+    "summary": {
+      "anchors": ["HEALTH INSURANCE CLAIM FORM", "MEDICARE", "MEDICAID"]
+    },
+
+    "insured.id_number": {
+      "anchors": ["INSURED'S I.D. NUMBER", "I.D. NUMBER"],
+      "patterns": ["[0-9]{6,}"]
+    },
+    "patient.name": {
+      "anchors": ["PATIENT'S NAME", "PATIENTS NAME"]
+    },
+    "insured.name": {
+      "anchors": ["INSURED'S NAME", "INSUREDS NAME"]
+    },
+
+    "patient.date_of_birth": {
+      "anchors": ["PATIENT'S BIRTH DATE", "PATIENTS BIRTH DATE"],
+      "date_formats": ["MM DD YY", "MM/DD/YYYY", "YYYY-MM-DD", "MMM DD, YYYY", "MMMM DD, YYYY"]
+    },
+    "patient.sex": {
+      "anchors": ["SEX", "PATIENT SEX"]
+    },
+
+    "patient.address": {
+      "anchors": ["PATIENT'S ADDRESS", "PATIENTS ADDRESS"]
+    },
+    "insured.address": {
+      "anchors": ["INSURED'S ADDRESS", "INSUREDS ADDRESS"]
+    },
+    "patient.phone": {
+      "anchors": ["TELEPHONE", "PHONE"]
+    },
+
+    "insured.policy_group_or_feca_number": {
+      "anchors": ["INSURED'S POLICY GROUP OR FECA NUMBER", "POLICY GROUP", "FECA NUMBER"]
+    },
+    "insured.insurance_plan_name": {
+      "anchors": ["INSURANCE PLAN NAME OR PROGRAM NAME", "INSURANCE PLAN NAME", "PROGRAM NAME"]
+    },
+
+    "provider.referring_provider_name": {
+      "anchors": ["NAME OF REFERRING PHYSICIAN", "REFERRING PHYSICIAN"]
+    },
+    "provider.referring_provider_id": {
+      "anchors": ["I.D. NUMBER OF REFERRING PHYSICIAN", "REFERRING PHYSICIAN ID"]
+    },
+
+    "claim.patient_account_no": {
+      "anchors": ["PATIENT'S ACCOUNT NO", "PATIENT ACCOUNT NO"]
+    },
+    "provider.federal_tax_id": {
+      "anchors": ["FEDERAL TAX I.D. NUMBER", "TAX I.D."],
+      "patterns": ["[0-9]{9}"]
+    },
+
+    "claim.total_charges": {
+      "anchors": ["TOTAL CHARGES", "TOTAL CHARGE"],
+      "currency": "USD"
+    },
+    "claim.amount_paid": {
+      "anchors": ["AMOUNT PAID"]
+    },
+    "claim.balance_due": {
+      "anchors": ["BALANCE DUE"]
+    },
+
+    "claim.signature_on_file": {
+      "anchors": ["SIGNATURE ON FILE"]
+    },
+    "claim.date_signed": {
+      "anchors": ["SIGNED", "DATE"],
+      "date_formats": ["MM/DD/YYYY", "YYYY-MM-DD", "MMM DD, YYYY", "MMMM DD, YYYY"]
+    },
+
+    "service_lines": {
+      "anchors": ["24. A", "DATE(S) OF SERVICE", "PROCEDURES, SERVICES, OR SUPPLIES", "DIAGNOSIS CODE", "CHARGES"]
+    }
+  }
+}

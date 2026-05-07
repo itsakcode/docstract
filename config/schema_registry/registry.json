@@ -1,0 +1,6 @@
+{
+  "AutoPolicyDeclarations": { "defaultVersion": "v1", "active": true },
+  "HCFA1500": { "defaultVersion": "v1", "active": true },
+  "DriverLicense": { "defaultVersion": "v1", "active": true },
+  "Other": { "defaultVersion": "v1", "active": true }
+}

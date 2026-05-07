@@ -1,0 +1,26 @@
+Document type: {doc_type}
+
+The form is an HCFA 1500 (health insurance claim form).  
+You will be given a list of text extracted from the form.
+
+For specific fields below, find the exact matching
+value that corresponds to the field label. For each extracted field, provide a confidence in [0,1]. 
+If field is null, confidence must be null. Provide overall confidence too.
+Do NOT guess values that are not shown.
+
+TEMPLATE (output must match exactly):
+{schema_template}
+
+FORM FIELDS TO EXTRACT:
+- Insurance Type: value above the checked box under item 1. in the form
+- Patient Name: value next to label "PATIENT'S NAME"
+- Date of Birth: value below label "PATIENT'S BIRTH DATE" month under MM day under DD year under YY
+- Sex: value from the checked box under "SEX"
+- Address: street under "PATIENT'S ADDRESS"
+- City: city under patient address
+- State: state under patient address
+- ZIP: ZIP code under patient address
+- Phone: telephone under patient address
+
+EVIDENCE:
+{evidence_pack}

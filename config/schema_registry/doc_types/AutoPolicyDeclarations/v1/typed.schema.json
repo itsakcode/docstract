@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AutoPolicyDeclarations/typed/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "document_id": {
+      "type": "string"
+    },
+    "doc_type": {
+      "const": "AutoPolicyDeclarations"
+    },
+    "schema_version": {
+      "type": "string",
+      "default": "v1"
+    },
+    "summary": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "policy_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "effective_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "default": null
+        },
+        "expiration_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "default": null
+        }
+      },
+      "required": [
+        "policy_number",
+        "effective_date",
+        "expiration_date"
+      ]
+    },
+    "insured": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        }
+      }
+    },
+    "premium": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "total": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "default": null
+        },
+        "currency": {
+          "type": "string",
+          "default": "USD"
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "overall": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1,
+          "default": null
+        },
+        "fields": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "overall",
+        "fields",
+        "rationale"
+      ]
+    }
+  },
+  "required": [
+    "document_id",
+    "doc_type",
+    "confidence",
+    "schema_version"
+  ]
+}

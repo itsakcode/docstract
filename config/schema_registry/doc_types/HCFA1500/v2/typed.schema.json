@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "HCFA1500/typed/v2",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "document_id": { "type": "string" },
+    "doc_type": { "const": "HCFA1500" },
+    "schema_version": { "type": "string", "default": "v2" },
+
+    "summary": { "type": ["string", "null"], "default": null },
+
+    "payer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "program": { "type": ["string", "null"], "default": null },
+        "payer_name": { "type": ["string", "null"], "default": null }
+      }
+    },
+
+    "patient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": ["string", "null"], "default": null },
+        "date_of_birth": { "type": ["string", "null"], "format": "date", "default": null },
+        "sex": { "type": ["string", "null"], "enum": [null, "M", "F", "X", "U"], "default": null },
+        "address": { "type": ["string", "null"], "default": null },
+        "city": { "type": ["string", "null"], "default": null },
+        "state": { "type": ["string", "null"], "default": null },
+        "zip": { "type": ["string", "null"], "default": null },
+        "phone": { "type": ["string", "null"], "default": null },
+
+        "relationship_to_insured": { "type": ["string", "null"], "default": null },
+
+        "status": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "single": { "type": ["boolean", "null"], "default": null },
+            "married": { "type": ["boolean", "null"], "default": null },
+            "other": { "type": ["boolean", "null"], "default": null },
+            "employed": { "type": ["boolean", "null"], "default": null },
+            "full_time_student": { "type": ["boolean", "null"], "default": null },
+            "part_time_student": { "type": ["boolean", "null"], "default": null }
+          }
+        }
+      }
+    },
+
+    "insured": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id_number": { "type": ["string", "null"], "default": null },
+        "name": { "type": ["string", "null"], "default": null },
+        "address": { "type": ["string", "null"], "default": null },
+        "city": { "type": ["string", "null"], "default": null },
+        "state": { "type": ["string", "null"], "default": null },
+        "zip": { "type": ["string", "null"], "default": null },
+        "phone": { "type": ["string", "null"], "default": null },
+        "policy_group_or_feca_number": { "type": ["string", "null"], "default": null },
+        "insurance_plan_name": { "type": ["string", "null"], "default": null },
+
+        "date_of_birth": { "type": ["string", "null"], "format": "date", "default": null },
+        "sex": { "type": ["string", "null"], "enum": [null, "M", "F", "X", "U"], "default": null },
+
+        "employer_or_school_name": { "type": ["string", "null"], "default": null }
+      }
+    },
+
+    "other_insured": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": ["string", "null"], "default": null },
+        "policy_or_group_number": { "type": ["string", "null"], "default": null },
+        "date_of_birth": { "type": ["string", "null"], "format": "date", "default": null },
+        "sex": { "type": ["string", "null"], "enum": [null, "M", "F", "X", "U"], "default": null },
+        "employer_or_school_name": { "type": ["string", "null"], "default": null },
+        "insurance_plan_name": { "type": ["string", "null"], "default": null }
+      }
+    },
+
+    "condition_related_to": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "employment": { "type": ["boolean", "null"], "default": null },
+        "auto_accident": { "type": ["boolean", "null"], "default": null },
+        "other_accident": { "type": ["boolean", "null"], "default": null },
+        "auto_accident_place_state": { "type": ["string", "null"], "default": null }
+      }
+    },
+
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "referring_provider_name": { "type": ["string", "null"], "default": null },
+        "referring_provider_id": { "type": ["string", "null"], "default": null },
+
+        "facility_name": { "type": ["string", "null"], "default": null },
+
+        "billing_name": { "type": ["string", "null"], "default": null },
+        "billing_address": { "type": ["string", "null"], "default": null },
+        "billing_city": { "type": ["string", "null"], "default": null },
+        "billing_state": { "type": ["string", "null"], "default": null },
+        "billing_zip": { "type": ["string", "null"], "default": null },
+
+        "federal_tax_id": { "type": ["string", "null"], "default": null },
+        "npi": { "type": ["string", "null"], "default": null }
+      }
+    },
+
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "patient_account_no": { "type": ["string", "null"], "default": null },
+
+        "prior_authorization_number": { "type": ["string", "null"], "default": null },
+        "medicaid_resubmission_code": { "type": ["string", "null"], "default": null },
+        "original_ref_no": { "type": ["string", "null"], "default": null },
+
+        "diagnosis_codes": { "type": "array", "items": { "type": "string" }, "default": [] },
+
+        "total_charges": { "type": ["number", "null"], "default": null },
+        "amount_paid": { "type": ["number", "null"], "default": null },
+        "balance_due": { "type": ["number", "null"], "default": null },
+        "currency": { "type": "string", "default": "USD" },
+
+        "signature_on_file": { "type": ["boolean", "null"], "default": null },
+        "date_signed": { "type": ["string", "null"], "format": "date", "default": null },
+
+        "accept_assignment": { "type": ["boolean", "null"], "default": null }
+      }
+    },
+
+    "service_lines": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "date_of_service_from": { "type": ["string", "null"], "format": "date", "default": null },
+          "date_of_service_to": { "type": ["string", "null"], "format": "date", "default": null },
+          "place_of_service": { "type": ["string", "null"], "default": null },
+          "type_of_service": { "type": ["string", "null"], "default": null },
+          "procedure_code": { "type": ["string", "null"], "default": null },
+          "modifier": { "type": ["string", "null"], "default": null },
+          "diagnosis_pointer": { "type": ["string", "null"], "default": null },
+          "charges": { "type": ["number", "null"], "default": null },
+          "days_or_units": { "type": ["number", "null"], "default": null }
+        }
+      }
+    }
+  },
+  "required": ["document_id", "doc_type", "schema_version"]
+}

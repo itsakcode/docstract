@@ -1,0 +1,12 @@
+{
+  "doc_type": "CarDamagePhoto",
+  "version": "v1",
+  "fields": {
+    "damage_present": { "preferred_sources": ["image_model"] },
+    "damage_type": { "preferred_sources": ["image_model"] },
+    "severity": { "preferred_sources": ["image_model"] },
+    "affected_areas": { "preferred_sources": ["image_model"] },
+    "observations": { "preferred_sources": ["image_model"] },
+    "confidence.overall": { "preferred_sources": ["image_model"] }
+  }
+}

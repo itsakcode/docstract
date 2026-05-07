@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "CarDamagePhoto/typed/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "document_id": { "type": "string" },
+    "doc_type": { "const": "CarDamagePhoto" },
+    "schema_version": { "type": "string", "default": "v1" },
+
+    "damage_present": { "type": ["boolean", "null"], "default": null },
+
+    "damage_type": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "scratch",
+          "dent",
+          "crack",
+          "broken_glass",
+          "bumper_damage",
+          "paint_transfer",
+          "hail_damage",
+          "rust",
+          "missing_part",
+          "unknown"
+        ]
+      },
+      "default": []
+    },
+
+    "severity": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null],
+      "default": null
+    },
+
+    "affected_areas": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+
+    "observations": { "type": ["string", "null"], "default": null },
+
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "overall": { "type": ["number", "null"], "minimum": 0, "maximum": 1, "default": null },
+        "fields": {
+          "type": "object",
+          "additionalProperties": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+        },
+        "rationale": { "type": ["string", "null"], "default": null }
+      },
+      "required": ["overall", "fields", "rationale"]
+    }
+  },
+  "required": ["document_id", "doc_type", "schema_version", "confidence"]
+}

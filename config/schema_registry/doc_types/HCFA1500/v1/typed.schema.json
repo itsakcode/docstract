@@ -1,0 +1,502 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "HCFA1500/typed/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "document_id": {
+      "type": "string"
+    },
+    "doc_type": {
+      "const": "HCFA1500"
+    },
+    "schema_version": {
+      "type": "string",
+      "default": "v1"
+    },
+    "summary": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "sender": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        }
+      }
+    },
+    "insuranceType": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "patient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "date_of_birth": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "default": null
+        },
+        "sex": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "M",
+            "F",
+            "X",
+            "U"
+          ],
+          "default": null
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        }
+      }
+    },
+    "insured": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "relationship_to_patient": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "policy_group_or_feca_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "insurance_plan_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        }
+      }
+    },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "referring_provider_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "referring_provider_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "billing_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "billing_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "billing_city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "billing_state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "billing_zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "federal_tax_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "npi": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "payer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "claim_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "patient_account_no": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "diagnosis_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "total_charges": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "default": null
+        },
+        "amount_paid": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "default": null
+        },
+        "balance_due": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "default": null
+        },
+        "currency": {
+          "type": "string",
+          "default": "USD"
+        },
+        "signature_on_file": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": null
+        },
+        "date_signed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "default": null
+        }
+      }
+    },
+    "service_lines": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "date_of_service_from": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "default": null
+          },
+          "date_of_service_to": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "default": null
+          },
+          "place_of_service": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "type_of_service": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "procedure_code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "modifier": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "diagnosis_pointer": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "charges": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "default": null
+          },
+          "days_or_units": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "default": null
+          },
+          "epsdt_family_plan": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "emg": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "cob": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "overall": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1,
+          "default": null
+        },
+        "fields": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "overall",
+        "fields",
+        "rationale"
+      ]
+    }
+  },
+  "required": [
+    "document_id",
+    "doc_type",
+    "schema_version",
+    "confidence"
+  ]
+}

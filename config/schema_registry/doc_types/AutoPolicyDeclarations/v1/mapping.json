@@ -1,0 +1,23 @@
+{
+  "doc_type": "AutoPolicyDeclarations",
+  "version": "v1",
+  "fields": {
+    "policy.policy_number": {
+      "anchors": ["Policy Number", "Policy No.", "Policy #"],
+      "patterns": ["[A-Z0-9\\-]{6,}"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "policy.effective_date": {
+      "anchors": ["Effective Date", "Policy Effective"],
+      "date_formats": ["MM/DD/YYYY", "YYYY-MM-DD", "MMM DD, YYYY", "MMMM DD, YYYY"]
+    },
+    "policy.expiration_date": {
+      "anchors": ["Expiration Date", "Policy Expiration"],
+      "date_formats": ["MM/DD/YYYY", "YYYY-MM-DD", "MMM DD, YYYY", "MMMM DD, YYYY"]
+    },
+    "premium.total": {
+      "anchors": ["Total Premium", "Policy Premium"],
+      "currency": "USD"
+    }
+  }
+}

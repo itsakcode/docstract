@@ -1,0 +1,23 @@
+{
+  "doc_type": "Other",
+  "version": "v1",
+  "fields": {
+    "summary": {
+      "preferred_sources": ["llm"],
+      "notes": "Short 1-3 sentence summary of what this document is about"
+    },
+    "notes": {
+      "preferred_sources": ["llm"],
+      "notes": "Bulleted notes: important items, dates, parties, amounts, actions"
+    },
+    "key_values": {
+      "preferred_sources": ["llm", "textract.kv", "textract.lines"],
+      "notes": "Extract as many meaningful key/value pairs as possible"
+    },
+    "kv_map": {
+      "preferred_sources": ["llm"],
+      "notes": "Populate using key_values (best-effort). Keep keys short and normalized."
+    },
+    "confidence.overall": { "preferred_sources": ["llm"] }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "doc_type": "DriverLicense",
+  "version": "v1",
+  "fields": {
+    "license.license_number": {
+      "anchors": ["DL", "DLN", "LIC", "LICENSE", "License No", "License #", "LIC#", "Customer ID"],
+      "patterns": ["[A-Z0-9\\-]{5,}"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "license.card_number": {
+      "anchors": ["DD", "Document Discriminator", "Document#", "Document No", "Card#", "Card No", "CN"],
+      "patterns": ["[A-Z0-9\\-]{4,}"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "license.issue_date": {
+      "anchors": ["ISS", "Issued", "Issue Date", "Date Issued", "ISSDT"],
+      "date_formats": ["MM/DD/YYYY", "M/D/YYYY", "YYYY-MM-DD", "MM-DD-YYYY", "MMM DD, YYYY", "MMMM DD, YYYY"]
+    },
+    "license.expiration_date": {
+      "anchors": ["EXP", "Expires", "Expiration", "Expiration Date", "EXPDT"],
+      "date_formats": ["MM/DD/YYYY", "M/D/YYYY", "YYYY-MM-DD", "MM-DD-YYYY", "MMM DD, YYYY", "MMMM DD, YYYY"]
+    },
+    "person.date_of_birth": {
+      "anchors": ["DOB", "Birth", "BIRTH DATE", "Date of Birth"],
+      "date_formats": ["MM/DD/YYYY", "M/D/YYYY", "YYYY-MM-DD", "MM-DD-YYYY", "MMM DD, YYYY", "MMMM DD, YYYY"]
+    },
+    "person.full_name": {
+      "anchors": ["Name", "LN", "Last", "FN", "First", "Middle", "Given Name", "Surname"],
+      "preferred_sources": ["textract.lines", "textract.forms"]
+    },
+    "person.last_name": {
+      "anchors": ["LN", "Last", "Surname", "Last Name"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "person.first_name": {
+      "anchors": ["FN", "First", "Given", "First Name", "Given Name"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "person.middle_name": {
+      "anchors": ["MI", "M", "Middle", "Middle Name"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "person.sex": {
+      "anchors": ["SEX", "Gender", "GENDER", "Sex"],
+      "patterns": ["^(M|F|X)$"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "person.height": {
+      "anchors": ["HT", "HGT", "Height"],
+      "patterns": ["^([0-9]{1,2}[- ]?[0-9]{1,2}|[0-9]{3}|[0-9]{2,3}\\s?cm)$"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "person.weight": {
+      "anchors": ["WT", "WGT", "Weight"],
+      "patterns": ["^([0-9]{2,3}\\s?(lb|lbs|kg)?)$"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "person.eye_color": {
+      "anchors": ["EYES", "Eye", "Eye Color", "EYE"],
+      "patterns": ["^[A-Z]{2,3}$"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "person.hair_color": {
+      "anchors": ["HAIR", "Hair", "Hair Color"],
+      "patterns": ["^[A-Z]{2,3}$"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "address.address_line1": {
+      "anchors": ["Address", "ADDR", "Street", "Residence Address"],
+      "preferred_sources": ["textract.lines", "textract.forms"]
+    },
+    "address.city": {
+      "anchors": ["City"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "address.state": {
+      "anchors": ["State", "ST"],
+      "patterns": ["^[A-Z]{2}$"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "address.postal_code": {
+      "anchors": ["ZIP", "Zip", "Postal", "Postal Code"],
+      "patterns": ["^[0-9]{5}(-[0-9]{4})?$"],
+      "preferred_sources": ["textract.forms", "textract.lines"]
+    },
+    "issuing.state_or_province": {
+      "anchors": ["STATE", "State", "Issuer", "Issuing State"],
+      "patterns": ["^[A-Z]{2}$"],
+      "preferred_sources": ["textract.lines", "textract.forms"]
+    }
+  }
+}

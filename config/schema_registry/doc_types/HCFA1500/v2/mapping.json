@@ -1,0 +1,57 @@
+{
+  "doc_type": "HCFA1500",
+  "version": "v2",
+  "fields": {
+    "summary": { "anchors": ["HEALTH INSURANCE CLAIM FORM", "HCFA", "CMS-1500"] },
+
+    "payer.program": { "anchors": ["MEDICARE", "MEDICAID", "CHAMPUS", "CHAMPVA", "GROUP HEALTH PLAN", "FECA", "OTHER"] },
+
+    "patient.name": { "anchors": ["PATIENT'S NAME"] },
+    "patient.date_of_birth": {
+      "anchors": ["PATIENT'S BIRTH DATE"],
+      "date_formats": ["MM/DD/YYYY", "YYYY-MM-DD", "MMM DD, YYYY", "MMMM DD, YYYY", "MM DD YY"]
+    },
+    "patient.sex": { "anchors": ["SEX"] },
+    "patient.address": { "anchors": ["PATIENT'S ADDRESS"] },
+    "patient.phone": { "anchors": ["TELEPHONE"] },
+    "patient.status": { "anchors": ["PATIENT STATUS"] },
+
+    "insured.id_number": { "anchors": ["INSURED'S I.D. NUMBER", "I.D. NUMBER"] },
+    "insured.name": { "anchors": ["INSURED'S NAME"] },
+    "insured.address": { "anchors": ["INSURED'S ADDRESS"] },
+    "insured.phone": { "anchors": ["TELEPHONE"] },
+    "insured.policy_group_or_feca_number": { "anchors": ["POLICY GROUP OR FECA NUMBER"] },
+    "insured.insurance_plan_name": { "anchors": ["INSURANCE PLAN NAME OR PROGRAM NAME"] },
+    "insured.date_of_birth": {
+      "anchors": ["INSURED'S DATE OF BIRTH"],
+      "date_formats": ["MM/DD/YYYY", "YYYY-MM-DD", "MMM DD, YYYY", "MMMM DD, YYYY", "MM DD YY"]
+    },
+
+    "other_insured.name": { "anchors": ["OTHER INSURED'S NAME"] },
+    "other_insured.policy_or_group_number": { "anchors": ["OTHER INSURED'S POLICY OR GROUP NUMBER"] },
+
+    "condition_related_to.employment": { "anchors": ["EMPLOYMENT? (CURRENT OR PREVIOUS)"] },
+    "condition_related_to.auto_accident": { "anchors": ["AUTO ACCIDENT?"] },
+    "condition_related_to.other_accident": { "anchors": ["OTHER ACCIDENT?"] },
+    "condition_related_to.auto_accident_place_state": { "anchors": ["PLACE (State)"] },
+
+    "provider.referring_provider_name": { "anchors": ["NAME OF REFERRING PHYSICIAN OR OTHER SOURCE"] },
+    "provider.referring_provider_id": { "anchors": ["I.D. NUMBER OF REFERRING PHYSICIAN"] },
+    "provider.facility_name": { "anchors": ["NAME AND ADDRESS OF FACILITY WHERE SERVICES WERE RENDERED"] },
+    "provider.federal_tax_id": { "anchors": ["FEDERAL TAX I.D. NUMBER"] },
+
+    "claim.medicaid_resubmission_code": { "anchors": ["MEDICAID RESUBMISSION CODE"] },
+    "claim.original_ref_no": { "anchors": ["ORIGINAL REF. NO"] },
+    "claim.prior_authorization_number": { "anchors": ["PRIOR AUTHORIZATION NUMBER"] },
+    "claim.patient_account_no": { "anchors": ["PATIENT'S ACCOUNT NO"] },
+
+    "claim.total_charges": { "anchors": ["TOTAL CHARGES"] },
+    "claim.amount_paid": { "anchors": ["AMOUNT PAID"] },
+    "claim.balance_due": { "anchors": ["BALANCE DUE"] },
+
+    "claim.signature_on_file": { "anchors": ["SIGNATURE ON FILE"] },
+    "claim.accept_assignment": { "anchors": ["ACCEPT ASSIGNMENT?"] },
+
+    "service_lines": { "anchors": ["DATE(S) OF SERVICE", "PROCEDURES, SERVICES, OR SUPPLIES", "CHARGES"] }
+  }
+}
