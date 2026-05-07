@@ -1,4 +1,4 @@
-# AWS Intelligent Document Processing (IDP)
+# Docstract - AWS Intelligent Document Processing (IDP)
 
 An end-to-end document processing pipeline built on AWS. Upload a PDF, and the system automatically extracts text, classifies the document type, extracts structured fields, validates against a schema, and optionally indexes the content into OpenSearch Serverless for semantic search and RAG-based Q&A.
 
